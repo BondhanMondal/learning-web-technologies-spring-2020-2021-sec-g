@@ -18,16 +18,18 @@
 
 		if($password!=$confirmPassword)
 		{
-			echo "Match Password".'<a href="registration.html"><u>Home</a>';
+			echo "Password not matched".'<a href="registration.html"><u>Home</a>';
 		}
 		else
 		{
 
+		$user = ['name'=> $name, 'id'=> $id, 'email'=>$email, 'password'=> $password, 'usertype'=> $userType];
+		$juser = json_encode($user);
 		$file=fopen('user.jason','a');
-		fwrite($file,$name.'|'.$id.'|'.$email.'|'.$password.'|'.$userType."/r/n");
+		fwrite($file,$juser);
 		fclose($file);
 
-		header('location: login.html');
+		header('location: ../view/login.html');
 		}
 	}
 	}

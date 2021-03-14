@@ -33,7 +33,7 @@
 				$_SESSION['status']  = "Ok";
 				$_SESSION['uname'] 	= $user[0];
 				$_SESSION['type'] 	= $user[4];
-				header('location: home.php');
+				header('location: ../home.php');
 				}
 				else
 				{
@@ -42,7 +42,7 @@
 		}
 
 	}else{
-		header("location: login.html");
+		header('location: ../view/login.html');
 	}
 
 
